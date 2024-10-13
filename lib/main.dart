@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:meditation_app/constant/consts.dart';
 
 void main() {
@@ -11,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         textTheme: Theme.of(context).textTheme.apply(displayColor: kTextColor),
         scaffoldBackgroundColor: kBackgroundColor,
@@ -54,17 +56,51 @@ class _HomescreenState extends State<Homescreen> {
                 vertical: 20,
                 horizontal: 20,
               ),
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: Container(
-                  height: 52,
-                  width: 52,
-                  alignment: Alignment.center,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Color.fromARGB(255, 229, 182, 156),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Container(
+                      height: 52,
+                      width: 52,
+                      alignment: Alignment.center,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Color.fromARGB(255, 229, 182, 156),
+                      ),
+                      child: SvgPicture.asset('assets/icons/menu.svg'),
+                    ),
                   ),
-                ),
+                  Text(
+                    'سارا عزیز برای مدیتیشن\n آماده ای؟',
+                    textAlign: TextAlign.right,
+                    style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                          fontSize: 30,
+                          fontWeight: FontWeight.w900,
+                        ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.symmetric(vertical: 40),
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 5, horizontal: 30),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    child: TextField(
+                      textAlign: TextAlign.right,
+                      decoration: InputDecoration(
+                        hintText: '...جستجو کنید ',
+                        icon: SvgPicture.asset('assets/icons/search.svg'),
+                        hintStyle: const TextStyle(
+                          fontSize: 18,
+                        ),
+                        border: InputBorder.none,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
