@@ -47,7 +47,27 @@ class _HomescreenState extends State<Homescreen> {
                 ),
               ),
             ),
-          )
+          ),
+          SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                vertical: 20,
+                horizontal: 20,
+              ),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: Container(
+                  height: 52,
+                  width: 52,
+                  alignment: Alignment.center,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Color.fromARGB(255, 229, 182, 156),
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
