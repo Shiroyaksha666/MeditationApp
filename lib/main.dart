@@ -37,6 +37,31 @@ class _HomescreenState extends State<Homescreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      bottomNavigationBar: Container(
+        height: 80,
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 35),
+        color: Colors.white,
+        child: const Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            NavigationIconMaker(
+              title: 'امروز',
+              svgsrc: 'assets/icons/calendar.svg',
+              isActive: false,
+            ),
+            NavigationIconMaker(
+              title: 'تمرینات',
+              svgsrc: 'assets/icons/gym.svg',
+              isActive: true,
+            ),
+            NavigationIconMaker(
+              title: 'تنظیمات',
+              svgsrc: 'assets/icons/Settings.svg',
+              isActive: false,
+            ),
+          ],
+        ),
+      ),
       body: Stack(
         children: <Widget>[
           Container(

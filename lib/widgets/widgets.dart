@@ -50,3 +50,35 @@ class GridMaker extends StatelessWidget {
     );
   }
 }
+
+class NavigationIconMaker extends StatelessWidget {
+  final String title;
+  final String svgsrc;
+  final VoidCallback? press;
+  final bool isActive;
+  const NavigationIconMaker({
+    super.key,
+    required this.svgsrc,
+    required this.title,
+    this.press,
+    required this.isActive,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: <Widget>[
+        SvgPicture.asset(svgsrc),
+        Text(
+          title,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 15,
+            color: isActive ? kActiveIconColor : kTextColor,
+          ),
+        ),
+      ],
+    );
+  }
+}
