@@ -107,26 +107,7 @@ class _HomescreenState extends State<Homescreen> {
                           fontWeight: FontWeight.w900,
                         ),
                   ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(vertical: 40),
-                    padding:
-                        const EdgeInsets.symmetric(vertical: 5, horizontal: 30),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    child: TextField(
-                      textAlign: TextAlign.right,
-                      decoration: InputDecoration(
-                        hintText: '...جستجو کنید ',
-                        icon: SvgPicture.asset('assets/icons/search.svg'),
-                        hintStyle: const TextStyle(
-                          fontSize: 18,
-                        ),
-                        border: InputBorder.none,
-                      ),
-                    ),
-                  ),
+                  const SearchBarMaker(),
                   Expanded(
                     child: GridView.count(
                       crossAxisSpacing: 20,

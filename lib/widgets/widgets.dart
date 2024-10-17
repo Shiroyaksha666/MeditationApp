@@ -82,3 +82,32 @@ class NavigationIconMaker extends StatelessWidget {
     );
   }
 }
+
+class SearchBarMaker extends StatelessWidget {
+  const SearchBarMaker({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 40),
+      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(30),
+      ),
+      child: TextField(
+        textAlign: TextAlign.right,
+        decoration: InputDecoration(
+          hintText: '...جستجو کنید ',
+          icon: SvgPicture.asset('assets/icons/search.svg'),
+          hintStyle: const TextStyle(
+            fontSize: 18,
+          ),
+          border: InputBorder.none,
+        ),
+      ),
+    );
+  }
+}
