@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:meditation_app/constant/consts.dart';
+import 'package:meditation_app/screens/meditation_page.dart';
 import 'package:meditation_app/widgets/widgets.dart';
 
 void main() {
@@ -132,20 +133,30 @@ class _HomescreenState extends State<Homescreen> {
                       mainAxisSpacing: 20,
                       childAspectRatio: 0.95,
                       crossAxisCount: 2,
-                      children: const <Widget>[
-                        GridMaker(
+                      children: <Widget>[
+                        const GridMaker(
                           topic: 'رژیم پیشنهادی',
                           imagepath: 'assets/icons/Hamburger.svg',
                         ),
-                        GridMaker(
+                        const GridMaker(
                           topic: 'نرمش',
                           imagepath: 'assets/icons/Excrecises.svg',
                         ),
                         GridMaker(
                           topic: 'مدیتیشن',
                           imagepath: 'assets/icons/Meditation.svg',
+                          pressbutton: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return const MeditationPage();
+                                },
+                              ),
+                            );
+                          },
                         ),
-                        GridMaker(
+                        const GridMaker(
                           topic: 'یوگا',
                           imagepath: 'assets/icons/yoga.svg',
                         ),
