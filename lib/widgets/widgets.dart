@@ -91,7 +91,7 @@ class SearchBarMaker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 40),
+      margin: const EdgeInsets.symmetric(vertical: 25),
       padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
       decoration: BoxDecoration(
         color: Colors.white,
