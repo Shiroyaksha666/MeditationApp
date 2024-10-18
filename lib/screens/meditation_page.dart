@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:meditation_app/constant/consts.dart';
 import 'package:meditation_app/screens/video_player_page.dart';
 import 'package:meditation_app/widgets/widgets.dart';
-import 'package:video_player/video_player.dart';
 
 class MeditationPage extends StatelessWidget {
   const MeditationPage({super.key});
