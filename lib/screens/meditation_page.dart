@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:meditation_app/constant/consts.dart';
+import 'package:meditation_app/screens/video_player_page.dart';
 import 'package:meditation_app/widgets/widgets.dart';
+import 'package:video_player/video_player.dart';
 
 class MeditationPage extends StatelessWidget {
   const MeditationPage({super.key});
@@ -99,7 +101,13 @@ class MeditationPage extends StatelessWidget {
                       BuildSeseionCard(
                         sesionNumber: 'درس 01',
                         isDone: true,
-                        press: () {},
+                        press: () {
+                          Navigator.push(context, MaterialPageRoute(
+                            builder: (context) {
+                              return const MyVideoPlayer();
+                            },
+                          ));
+                        },
                       ),
                       const BuildSeseionCard(
                         sesionNumber: 'درس 02',
